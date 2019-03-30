@@ -1,0 +1,26 @@
+{
+    "name": "隐藏元素助手",
+    "version": "1.0",
+    "description": "隐藏类似广告或者是其他页面中不喜欢的元素的插件",
+    "manifest_version": 2,
+    "permissions": ["declarativeContent", "storage", "tabs", "contextMenus"],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["js/content-script.js"],
+        "run_at": "document_start"
+    }],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "/image/02.png"
+    },
+    "icons": {
+        "16": "image/00.png",
+        "32": "image/01.png",
+        "48": "image/02.png",
+        "128": "image/03.png"
+    }
+}
